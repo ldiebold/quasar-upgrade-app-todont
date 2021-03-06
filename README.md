@@ -1,26 +1,17 @@
 # UpgradeVue2 (upgrade-vue-2)
 
-A working vue 2 app with as many breaking changes as possible
+This app is designed to have **as many breaking changes possible** with quasar v2.
+Why?
+It will be used to create a screencast that will ease the upgrade process for newer users.
+
+Here's the guide we will be using! (quasar next upgrade guide)[https://next.quasar.dev/start/upgrade-guide]
 
 ## Install the dependencies
 ```bash
 yarn
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### Start the app in development mode
 ```bash
 quasar dev
 ```
-
-### Lint the files
-```bash
-yarn run lint
-```
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
