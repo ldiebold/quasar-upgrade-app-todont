@@ -1,8 +1,8 @@
 {
-  "name": "upgrade-vue-2",
+  "name": "todont",
   "version": "0.0.1",
-  "description": "A working vue 2 app with as many breaking changes as possible",
-  "productName": "UpgradeVue2",
+  "description": "An app designed to have as many breaking changes possible with quasar v2",
+  "productName": "ToDont",
   "author": "ldiebold <luke@ldiebold.com>",
   "private": true,
   "scripts": {

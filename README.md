@@ -1,4 +1,4 @@
-# UpgradeVue2 (upgrade-vue-2)
+# ToDon't (An app to aid upgrading to Quasar v2)
 
 This app is designed to have **as many breaking changes possible** with quasar v2.
 Why?
