@@ -1,25 +1,26 @@
 <template>
   <q-select
-    v-slot:option="scope"
     v-model="model"
     v-bind="$attrs"
     :options="options"
     @input="setSiteColor"
   >
-    <q-item
-      v-bind="scope.itemProps"
-      v-on="scope.itemEvents"
-    >
-      <q-item-section avatar>
-        <q-icon
-          :style="`color: ${scope.opt.hexColor};`"
-          name="circle"
-        />
-      </q-item-section>
-      <q-item-section>
-        <q-item-label>{{ scope.opt.label }}</q-item-label>
-      </q-item-section>
-    </q-item>
+    <template #option="scope">
+      <q-item
+        v-bind="scope.itemProps"
+        v-on="scope.itemEvents"
+      >
+        <q-item-section avatar>
+          <q-icon
+            :style="`color: ${scope.opt.hexColor};`"
+            name="circle"
+          />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>{{ scope.opt.label }}</q-item-label>
+        </q-item-section>
+      </q-item>
+    </template>
   </q-select>
 </template>
 

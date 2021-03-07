@@ -55,6 +55,11 @@ export default {
     }
   },
 
+  emits: [
+    'hide',
+    'ok'
+  ],
+
   mounted () {
     console.log(this)
   },

@@ -27,6 +27,10 @@ export default {
     }
   },
 
+  emits: [
+    'update-success'
+  ],
+
   setup (props) {
     const updateValue = ref(props.todont.title)
 

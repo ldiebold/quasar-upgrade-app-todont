@@ -31,7 +31,7 @@
           :options="['en-us', 'en-au']"
           @input="handleLanguageSelectInput"
         >
-          <template v-slot:option="scope">
+          <template #option="scope">
             <q-item
               v-bind="scope.itemProps"
               v-on="scope.itemEvents"

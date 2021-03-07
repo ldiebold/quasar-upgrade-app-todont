@@ -8,10 +8,10 @@
     >
       <div class="bg-white">
         <q-table
+          v-model:pagination="pagination"
           flat
           :columns="columns"
           :data="todonts"
-          :pagination.sync="pagination"
           hide-pagination
         />
 

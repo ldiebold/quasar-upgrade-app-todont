@@ -5,8 +5,8 @@
     @click="deleteTodont(todont.uid)"
   >
     <template
-      v-for="(_, slot) of $scopedSlots"
-      v-slot:[slot]="scope"
+      v-for="(_, slot) of $slots"
+      #[slot]="scope"
     >
       <slot
         :name="slot"
