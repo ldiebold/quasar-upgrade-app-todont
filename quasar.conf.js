@@ -19,10 +19,9 @@ module.exports = function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
-      'composition-api',
       'i18n',
-      'axios',
-      'appDefaults'
+      'axios'
+      // 'appDefaults'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css

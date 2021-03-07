@@ -1,15 +1,17 @@
 import generateUid from '../../support/generateUid'
-import Vue from 'vue'
 
 export function CREATE_TODONT (state, todont) {
   todont.uid = generateUid()
   state.todonts.push(todont)
 }
 
+/**
+ * TODO: Check this works
+ */
 export function UPDATE_TODONT (state, payload) {
   const todontIndex = state.todonts.findIndex(todont => todont.uid === payload.uid)
   const todontToUpdate = state.todonts[todontIndex]
-  Vue.set(state.todonts, todontIndex, { ...todontToUpdate, ...payload.data })
+  state.todonts[todontIndex] = { ...todontToUpdate, ...payload.data }
 }
 
 export function DELETE_TODONT (state, todontUid) {

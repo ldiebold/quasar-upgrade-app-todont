@@ -29,7 +29,7 @@
           input-class="text-white"
           class="q-ml-lg"
           :options="['en-us', 'en-au']"
-          @input="handleLanguageSelectInput"
+          @update:modelValue="handleLanguageSelectInput"
         >
           <template #option="scope">
             <q-item
@@ -73,7 +73,10 @@
     <q-page-container>
       <router-view />
 
-      <q-page-sticky
+      <!--
+        TODO: Fix This
+       -->
+      <!-- <q-page-sticky
         :offset="[12,12]"
         position="top-left"
       >
@@ -83,7 +86,7 @@
           round
           icon="home"
         />
-      </q-page-sticky>
+      </q-page-sticky> -->
     </q-page-container>
   </q-layout>
 </template>

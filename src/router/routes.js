@@ -1,3 +1,4 @@
+import Error404 from 'pages/Error404.vue'
 
 const routes = [
   {
@@ -14,8 +15,8 @@ const routes = [
   // Always leave this as last one,
   // but you can also remove it
   {
-    path: '*',
-    component: () => import('pages/Error404.vue')
+    path: '/:catchAll(.*)*',
+    component: Error404
   }
 ]
 

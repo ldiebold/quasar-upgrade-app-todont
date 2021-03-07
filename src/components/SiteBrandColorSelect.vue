@@ -3,7 +3,7 @@
     v-model="model"
     v-bind="$attrs"
     :options="options"
-    @input="setSiteColor"
+    @update:modelValue="setSiteColor"
   >
     <template #option="scope">
       <q-item

@@ -38,6 +38,15 @@ const appLanguages = languages.filter(lang =>
 )
 
 export default {
+
+  /**
+   * TODO: Check this works
+   */
+  setup () {
+    this.langOptions = appLanguages.map(lang => ({
+      label: lang.nativeName, value: lang.isoName
+    }))
+  },
   data () {
     return {
       lang: this.$q.lang.isoName
@@ -54,12 +63,6 @@ export default {
         this.$q.lang.set(lang.default)
       })
     }
-  },
-
-  created () {
-    this.langOptions = appLanguages.map(lang => ({
-      label: lang.nativeName, value: lang.isoName
-    }))
   }
 }
 </script>

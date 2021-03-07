@@ -3,7 +3,9 @@
     v-bind="$attrs"
     @click="dialogVisible = true"
   >
-    <q-dialog v-model="dialogVisible">
+    <q-dialog
+      v-model="dialogVisible"
+    >
       <q-card
         :style="{
           width: '450px',

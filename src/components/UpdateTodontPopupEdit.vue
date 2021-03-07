@@ -17,7 +17,7 @@ import { createNamespacedHelpers } from 'vuex'
 
 const { mapMutations } = createNamespacedHelpers('todonts')
 
-import { ref } from '@vue/composition-api'
+import { ref } from 'vue'
 
 export default {
   props: {
