@@ -25,8 +25,8 @@
           <q-chat-message
             :text="[
               '<strong>Try these commands: </strong>',
-              '- create todo: go shopping',
-              '- delete todo: tell Shannen I love her'
+              '- create todont: Tell Shannen I love her',
+              '- delete todont: fall in love'
             ]"
           >
             <template #avatar>
@@ -67,7 +67,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-const { mapMutations } = createNamespacedHelpers('todos')
+const { mapMutations } = createNamespacedHelpers('todonts')
 
 import { scroll } from 'quasar'
 const { getScrollHeight, setScrollPosition } = scroll
@@ -85,25 +85,25 @@ export default {
       messages: [],
 
       actions: {
-        'create todo': vm.createTodo,
-        'delete todo': vm.deleteTodo
+        'create todont': vm.createTodont,
+        'delete todont': vm.deleteTodont
       }
     }
   },
 
   methods: {
-    ...mapMutations(['DELETE_TODO_BY_TITLE', 'CREATE_TODO']),
+    ...mapMutations(['DELETE_TODONT_BY_TITLE', 'CREATE_TODONT']),
 
-    createTodo (todoTitle) {
-      this.CREATE_TODO({
-        title: todoTitle
+    createTodont (todontTitle) {
+      this.CREATE_TODONT({
+        title: todontTitle
       })
 
-      this.createMessage('todo created!', 'sent')
+      this.createMessage('todont created!', 'sent')
     },
 
-    deleteTodo (todoTitle) {
-      this.DELETE_TODO_BY_TITLE(todoTitle)
+    deleteTodont (todontTitle) {
+      this.DELETE_TODONT_BY_TITLE(todontTitle)
       this.createMessage('Okay, Deleted :)', 'sent')
     },
 

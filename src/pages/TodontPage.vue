@@ -3,21 +3,21 @@
     class="row justify-center"
   >
     <q-card
-      ref="todoListCard"
+      ref="todontListCard"
       class="col-sm-12 col-md-5"
     >
-      <!-- Todos -->
-      <q-list>
+      <!-- Todonts -->
+      <q-list class="full-height">
         <q-item-label header>
           Todon'ts
         </q-item-label>
 
         <div
-          v-if="todos.length <= 0"
+          v-if="todonts.length <= 0"
           class="q-pa-md"
         >
           No todon'ts, go ahead and
-          <create-todo-button
+          <create-todont-button
             flat
             dense
             no-caps
@@ -28,18 +28,18 @@
         </div>
 
         <q-item
-          v-for="todo in todos"
-          :key="todo.uid"
+          v-for="todont in todonts"
+          :key="todont.uid"
         >
           <q-item-section>
-            {{ todo.title }}
-            <update-todo-popup-edit
-              :todo="todo"
+            {{ todont.title }}
+            <update-todont-popup-edit
+              :todont="todont"
               @update-success="handleUpdateSuccess"
             />
           </q-item-section>
           <q-item-section side>
-            <delete-todo-button :todo="todo" />
+            <delete-todont-button :todont="todont" />
           </q-item-section>
         </q-item>
       </q-list>
@@ -81,9 +81,9 @@
       />
     </q-page-sticky>
 
-    <!-- Create TODO FAB -->
+    <!-- Create TODONT FAB -->
     <q-page-sticky :offset="[22, 22]">
-      <create-todo-button
+      <create-todont-button
         :icon="$q.iconSet.fab.icon"
         fab
         color="primary"
@@ -105,23 +105,23 @@
 </template>
 
 <script>
-import CreateTodoButton from 'components/CreateTodoButton.vue'
-import DeleteTodoButton from 'components/DeleteTodoButton.vue'
-import UpdateTodoPopupEdit from 'components/UpdateTodoPopupEdit.vue'
+import CreateTodontButton from 'components/CreateTodontButton.vue'
+import DeleteTodontButton from 'components/DeleteTodontButton.vue'
+import UpdateTodontPopupEdit from 'components/UpdateTodontPopupEdit.vue'
 import AdvertBanner from 'components/AdvertBanner.vue'
 import CreatebotDialogButton from 'components/CreatebotDialogButton.vue'
 import ShowAsTableButton from 'components/ShowAsTableButton.vue'
 
 import { createNamespacedHelpers } from 'vuex'
-const { mapGetters, mapMutations } = createNamespacedHelpers('todos')
+const { mapGetters, mapMutations } = createNamespacedHelpers('todonts')
 
 export default {
   name: 'PageIndex',
 
   components: {
-    CreateTodoButton,
-    DeleteTodoButton,
-    UpdateTodoPopupEdit,
+    CreateTodontButton,
+    DeleteTodontButton,
+    UpdateTodontPopupEdit,
     AdvertBanner,
     CreatebotDialogButton,
     ShowAsTableButton
@@ -135,7 +135,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      todos: 'getTodos'
+      todonts: 'getTodonts'
     })
   },
 
@@ -147,7 +147,7 @@ export default {
 
   methods: {
     ...mapMutations({
-      createTodo: 'CREATE_TODO'
+      createTodont: 'CREATE_TODONT'
     }),
 
     listenForHotkeys () {
@@ -155,7 +155,7 @@ export default {
       document.addEventListener('keydown', function (event) {
         if (event.ctrlKey && event.key === 'm') {
           [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].forEach(num => {
-            vm.createTodo({
+            vm.createTodont({
               title: num
             })
           })

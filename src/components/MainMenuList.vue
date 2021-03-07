@@ -21,7 +21,7 @@
     </q-item>
 
     <q-item
-      to="/pages/todo"
+      to="/pages/todont"
       exact-active-class="selected-menu-item"
       label="get started!"
       color="accent"
@@ -33,7 +33,7 @@
     </q-item>
 
     <q-item
-      to="/pages/horizontal-todos"
+      to="/pages/horizontal-todonts"
       exact-active-class="selected-menu-item"
       color="secondary"
       clickable

@@ -9,14 +9,14 @@
 
     <q-btn
       class="q-mt-md"
-      to="todo"
+      to="todont"
       label="get started!"
       append
       color="accent"
     />
 
     <q-btn
-      to="horizontal-todos"
+      to="horizontal-todonts"
       label="get started horizontally!!!"
       append
       color="secondary"
@@ -55,7 +55,7 @@ export default {
       },
       description: {
         name: 'description',
-        content: 'The greatest todo app in the quasarverse'
+        content: 'The greatest todont app in the quasarverse'
       }
     }
   },

@@ -11,21 +11,21 @@
         style="height: 300px;"
         @scroll="handleScrolled"
       >
-        <q-card-section v-if="!todos.length">
-          no todos
+        <q-card-section v-if="!todonts.length">
+          no todonts
         </q-card-section>
         <q-card-section
-          v-if="todos.length"
+          v-if="todonts.length"
           class="full-height row no-wrap"
         >
           <q-card
-            v-for="todo in todos"
-            :key="todo.uid"
+            v-for="todont in todonts"
+            :key="todont.uid"
             class="q-mx-sm flex flex-center"
           >
             <q-card-section>
               <div class="text-h2">
-                {{ todo.title }}
+                {{ todont.title }}
               </div>
             </q-card-section>
           </q-card>
@@ -41,9 +41,9 @@
 
     <!-- <pre>{{ scrollInformation }}</pre> -->
 
-    <!-- Create TODO FAB -->
+    <!-- Create TODONT FAB -->
     <q-page-sticky :offset="[22, 22]">
-      <create-todo-button
+      <create-todont-button
         :icon="$q.iconSet.fab.icon"
         fab
         color="primary"
@@ -53,14 +53,14 @@
 </template>
 
 <script>
-import CreateTodoButton from 'components/CreateTodoButton.vue'
+import CreateTodontButton from 'components/CreateTodontButton.vue'
 
 import { createNamespacedHelpers } from 'vuex'
-const { mapGetters } = createNamespacedHelpers('todos')
+const { mapGetters } = createNamespacedHelpers('todonts')
 
 export default {
   components: {
-    CreateTodoButton
+    CreateTodontButton
   },
 
   data () {
@@ -74,7 +74,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      todos: 'getTodos'
+      todonts: 'getTodonts'
     })
   },
 

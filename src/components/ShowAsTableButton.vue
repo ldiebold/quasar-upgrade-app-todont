@@ -10,7 +10,7 @@
         <q-table
           flat
           :columns="columns"
-          :data="todos"
+          :data="todonts"
           :pagination.sync="pagination"
           hide-pagination
         />
@@ -30,7 +30,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-const { mapGetters } = createNamespacedHelpers('todos')
+const { mapGetters } = createNamespacedHelpers('todonts')
 
 export default {
   data () {
@@ -39,7 +39,7 @@ export default {
 
       columns: [
         {
-          label: 'Todo Title',
+          label: 'Todont Title',
           field: 'title',
           align: 'left'
         }
@@ -56,11 +56,11 @@ export default {
 
   computed: {
     ...mapGetters({
-      todos: 'getTodos'
+      todonts: 'getTodonts'
     }),
 
     pagesNumber () {
-      return Math.ceil(this.todos.length / this.pagination.rowsPerPage)
+      return Math.ceil(this.todonts.length / this.pagination.rowsPerPage)
     }
   }
 }

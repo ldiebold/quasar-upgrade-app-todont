@@ -1,7 +1,7 @@
 <template>
   <q-popup-edit
     v-model="updateValue"
-    @save="handleUpdateTodo"
+    @save="handleUpdateTodont"
   >
     <q-input
       v-model="updateValue"
@@ -15,24 +15,24 @@
 <script>
 import { createNamespacedHelpers } from 'vuex'
 
-const { mapMutations } = createNamespacedHelpers('todos')
+const { mapMutations } = createNamespacedHelpers('todonts')
 
 import { ref } from '@vue/composition-api'
 
 export default {
   props: {
-    todo: {
+    todont: {
       required: true,
       type: Object
     }
   },
 
   setup (props) {
-    const updateValue = ref(props.todo.title)
+    const updateValue = ref(props.todont.title)
 
-    function handleUpdateTodo () {
-      this.updateTodo({
-        uid: this.todo.uid,
+    function handleUpdateTodont () {
+      this.updateTodont({
+        uid: this.todont.uid,
         data: {
           title: updateValue.value
         }
@@ -42,10 +42,10 @@ export default {
 
     return {
       dialogShowing: false,
-      handleUpdateTodo,
+      handleUpdateTodont,
       updateValue,
       ...mapMutations({
-        updateTodo: 'UPDATE_TODO'
+        updateTodont: 'UPDATE_TODONT'
       })
     }
   }
@@ -55,7 +55,7 @@ export default {
   //   return {
   //     dialogShowing: false,
 
-  //     updateValue: vm.todo.title
+  //     updateValue: vm.todont.title
   //   }
   // },
 }

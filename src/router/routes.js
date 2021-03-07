@@ -5,8 +5,8 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: 'pages', component: () => import('pages/Index.vue') },
-      { path: 'pages/todo', component: () => import('pages/TodoPage.vue') },
-      { path: 'pages/horizontal-todos', component: () => import('pages/HorizontalTodosPage.vue') },
+      { path: 'pages/todont', component: () => import('pages/TodontPage.vue') },
+      { path: 'pages/horizontal-todonts', component: () => import('pages/HorizontalTodontsPage.vue') },
       { path: 'pages/languages', component: () => import('pages/LanguagesPage.vue') }
     ]
   },

@@ -2,7 +2,7 @@
   <q-btn
     flat
     icon="delete"
-    @click="deleteTodo(todo.uid)"
+    @click="deleteTodont(todont.uid)"
   >
     <template
       v-for="(_, slot) of $scopedSlots"
@@ -18,7 +18,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-const { mapMutations } = createNamespacedHelpers('todos')
+const { mapMutations } = createNamespacedHelpers('todonts')
 
 export default {
 
@@ -26,7 +26,7 @@ export default {
 
   },
   props: {
-    todo: {
+    todont: {
       required: true,
       type: Object
     }
@@ -44,7 +44,7 @@ export default {
 
   methods: {
     ...mapMutations({
-      deleteTodo: 'DELETE_TODO'
+      deleteTodont: 'DELETE_TODONT'
     })
   }
 }

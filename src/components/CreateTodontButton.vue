@@ -10,7 +10,7 @@
       <q-card class="bg-white">
         <q-card-section>
           <q-input
-            v-model="todoTitle"
+            v-model="todontTitle"
             label="title"
             filled
           />
@@ -19,7 +19,7 @@
         <q-card-section>
           <q-btn
             label="create"
-            @click="handleCreateTodo"
+            @click="handleCreateTodont"
           />
         </q-card-section>
       </q-card>
@@ -30,31 +30,27 @@
 <script>
 import { createNamespacedHelpers } from 'vuex'
 
-const { mapMutations } = createNamespacedHelpers('todos')
+const { mapMutations } = createNamespacedHelpers('todonts')
 
 export default {
-  // name: 'ComponentName',
   data () {
     return {
       dialogShowing: false,
 
-      todoTitle: ''
+      todontTitle: ''
     }
   },
 
   methods: {
-    handleDateInput (one, two) {
-      console.log(one, two)
-    },
-
-    handleCreateTodo () {
-      this.createTodo({
-        title: this.todoTitle
+    handleCreateTodont () {
+      this.createTodont({
+        title: this.todontTitle
       })
+      this.dialogShowing = false
     },
 
     ...mapMutations({
-      createTodo: 'CREATE_TODO'
+      createTodont: 'CREATE_TODONT'
     })
   }
 }
