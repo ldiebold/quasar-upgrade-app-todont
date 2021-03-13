@@ -86,7 +86,7 @@ export default {
     },
 
     goToEnd () {
-      this.$refs.scrollArea.setScrollPercentage(1)
+      this.$refs.scrollArea.setScrollPercentage('horizontal', 1)
     }
   }
 }

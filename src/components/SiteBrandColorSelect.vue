@@ -24,8 +24,7 @@
 </template>
 
 <script>
-import { colors } from 'quasar'
-const { setBrand } = colors
+import { setCssVar } from 'quasar'
 
 export default {
   data () {
@@ -68,7 +67,7 @@ export default {
 
   methods: {
     setSiteColor ({ hexColor }) {
-      setBrand('primary', hexColor)
+      setCssVar('primary', hexColor)
     }
   }
 }

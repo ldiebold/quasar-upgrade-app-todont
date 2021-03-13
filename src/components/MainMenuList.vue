@@ -67,7 +67,7 @@ export default {
 
 <style>
 .selected-menu-item {
-  background: var(--q-color-secondary);
+  background: var(--q-secondary);
   border-right: 4px solid white;
   color: white !important;
 }

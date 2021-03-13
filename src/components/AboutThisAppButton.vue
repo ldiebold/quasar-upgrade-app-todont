@@ -13,9 +13,10 @@ export default {
     openDialog () {
       this.$q.dialog({
         component: AboutThisAppDialogComponent,
-        message: 'This app has won multiple awards including "worst app" of the year AND - the prestigious - "most use of components in a nonsensical way" award',
-        circle: true,
-        parent: this
+        componentProps: {
+          message: 'This app has won multiple awards including "worst app" of the year AND - the prestigious - "most use of components in a nonsensical way" award',
+          circle: true
+        }
       })
     }
   }

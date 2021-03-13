@@ -38,25 +38,27 @@
 
 <script>
 import AboutThisAppButton from 'components/AboutThisAppButton.vue'
-import { date } from 'quasar'
+import { date, createMetaMixin } from 'quasar'
 
 export default {
   components: {
     AboutThisAppButton
   },
 
-  meta: {
-    meta: {
-      rhyme: {
-        name: 'rhyme',
-        content: 'Everything is better when you add a little meta'
-      },
-      description: {
-        name: 'description',
-        content: 'The greatest todont app in the quasarverse'
+  mixins: [
+    createMetaMixin({
+      meta: {
+        rhyme: {
+          name: 'rhyme',
+          content: 'Everything is better when you add a little meta'
+        },
+        description: {
+          name: 'description',
+          content: 'The greatest todont app in the quasarverse'
+        }
       }
-    }
-  },
+    })
+  ],
 
   computed: {
     nextMonth () {
@@ -67,9 +69,10 @@ export default {
   },
 
   mounted () {
-    // this.$q.loading.show({
-    //   message: '<div class="bg-grey-9 q-pa-lg text-h4 rounded-borders">I <b>PROMISE</b> this is <b class="text-red-4">WELL WORTH THE WAIT!</b></div>'
-    // })
+    this.$q.loading.show({
+      html: true,
+      message: '<div class="bg-grey-9 q-pa-lg text-h4 rounded-borders">I <b>PROMISE</b> this is <b class="text-red-4">WELL WORTH THE WAIT!</b></div>'
+    })
 
     setTimeout(() => {
       this.$q.loading.hide()

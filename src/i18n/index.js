@@ -1,7 +1,7 @@
-import enUS from './en-us'
-import enAU from './en-au'
+import enUS from './en-US'
+import enAU from './en-AU'
 
 export default {
-  'en-us': enUS,
-  'en-au': enAU
+  'en-US': enUS,
+  'en-AU': enAU
 }

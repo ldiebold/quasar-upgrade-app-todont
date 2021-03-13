@@ -28,7 +28,7 @@
           borderless
           input-class="text-white"
           class="q-ml-lg"
-          :options="['en-us', 'en-au']"
+          :options="['en-US', 'en-AU']"
           @update:modelValue="handleLanguageSelectInput"
         >
           <template #option="scope">
@@ -75,17 +75,17 @@
       <!--
         TODO: Fix This
        -->
-      <!-- <q-page-sticky
+      <q-page-sticky
         :offset="[12,12]"
         position="top-left"
       >
         <q-btn
           v-if="$route.path !== '/pages'"
-          v-go-back="'/pages'"
           round
           icon="home"
+          @click="$router.go(-1)"
         />
-      </q-page-sticky> -->
+      </q-page-sticky>
     </q-page-container>
   </q-layout>
 </template>
@@ -105,7 +105,7 @@ export default {
   data () {
     return {
       leftDrawerOpen: false,
-      language: 'en-us'
+      language: 'en-US'
     }
   },
 

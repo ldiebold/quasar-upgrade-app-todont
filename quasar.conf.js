@@ -20,8 +20,8 @@ module.exports = function (/* ctx */) {
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
       'i18n',
-      'axios'
-      // 'appDefaults'
+      'axios',
+      'appDefaults'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -87,9 +87,7 @@ module.exports = function (/* ctx */) {
       lang: 'en-US', // Quasar language pack
       config: {},
 
-      // Possible values for "importStrategy":
-      // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
-      // * 'all'  - Manually specify what to import
+      // import strategy must be auto
       importStrategy: 'auto',
 
       // For special cases outside of where "auto" importStrategy can have an impact

@@ -1,4 +1,4 @@
 // TODO: Fix this
-export default ({ Vue }) => {
-  Vue.prototype.$q.iconSet.fab.icon = 'note'
+export default ({ app }) => {
+  app.config.globalProperties.$q.iconSet.fab.icon = 'note'
 }

@@ -32,9 +32,10 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 import languages from 'quasar/lang/index.json'
 const appLanguages = languages.filter(lang =>
-  ['de', 'en-us', 'es', 'fr'].includes(lang.isoName)
+  ['de', 'en-US', 'es', 'fr'].includes(lang.isoName)
 )
 
 export default {
@@ -43,9 +44,15 @@ export default {
    * TODO: Check this works
    */
   setup () {
-    this.langOptions = appLanguages.map(lang => ({
+    let langOptions = ref({})
+
+    langOptions = appLanguages.map(lang => ({
       label: lang.nativeName, value: lang.isoName
     }))
+
+    return {
+      langOptions
+    }
   },
   data () {
     return {
@@ -57,7 +64,7 @@ export default {
     lang (lang) {
       // dynamic import, so loading on demand only
       import(
-        /* webpackInclude: /(de|en-us|es|fr)\.js$/ */
+        /* webpackInclude: /(de|en-US|es|fr)\.js$/ */
         'quasar/lang/' + lang
       ).then(lang => {
         this.$q.lang.set(lang.default)

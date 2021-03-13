@@ -41,6 +41,7 @@
           <q-chat-message
             v-for="message in messages"
             :key="message.id"
+            name-html
             :name="message.sent ? '<strong>QuaBot</strong>' : '<strong>You</strong>'"
             :sent="message.sent"
             :text="[message.text]"
@@ -73,7 +74,7 @@ import { createNamespacedHelpers } from 'vuex'
 const { mapMutations } = createNamespacedHelpers('todonts')
 
 import { scroll } from 'quasar'
-const { getScrollHeight, setScrollPosition } = scroll
+const { getScrollHeight, setVerticalScrollPosition } = scroll
 
 export default {
   data () {
@@ -133,7 +134,7 @@ export default {
 
       this.$nextTick(() => {
         const scrollAreaElement = this.$refs.messageScrollArea.$el
-        setScrollPosition(scrollAreaElement, getScrollHeight(scrollAreaElement))
+        setVerticalScrollPosition(scrollAreaElement, getScrollHeight(scrollAreaElement))
       })
     }
   }
