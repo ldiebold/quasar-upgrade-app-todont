@@ -39,7 +39,7 @@
       @click="goToEnd"
     />
 
-    <!-- <pre>{{ scrollInformation }}</pre> -->
+    <pre>{{ scrollInformation }}</pre>
 
     <!-- Create TODONT FAB -->
     <q-page-sticky :offset="[22, 22]">

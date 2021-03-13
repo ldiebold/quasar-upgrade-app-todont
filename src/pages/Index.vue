@@ -9,16 +9,14 @@
 
     <q-btn
       class="q-mt-md"
-      to="todont"
+      to="/pages/todont"
       label="get started!"
-      append
       color="accent"
     />
 
     <q-btn
-      to="horizontal-todonts"
+      to="/pages/horizontal-todonts"
       label="get started horizontally!!!"
-      append
       color="secondary"
       class="q-mt-md"
     />
@@ -32,7 +30,7 @@
     <q-img
       class="q-mt-lg"
       width="400px"
-      no-default-spinner
+      no-spinner
       src="~assets/big-image.jpg"
     />
   </q-page>
@@ -69,9 +67,9 @@ export default {
   },
 
   mounted () {
-    this.$q.loading.show({
-      message: '<div class="bg-grey-9 q-pa-lg text-h4 rounded-borders">I <b>PROMISE</b> this is <b class="text-red-4">WELL WORTH THE WAIT!</b></div>'
-    })
+    // this.$q.loading.show({
+    //   message: '<div class="bg-grey-9 q-pa-lg text-h4 rounded-borders">I <b>PROMISE</b> this is <b class="text-red-4">WELL WORTH THE WAIT!</b></div>'
+    // })
 
     setTimeout(() => {
       this.$q.loading.hide()

@@ -11,7 +11,7 @@
           v-model:pagination="pagination"
           flat
           :columns="columns"
-          :data="todonts"
+          :rows="todonts"
           hide-pagination
         />
 

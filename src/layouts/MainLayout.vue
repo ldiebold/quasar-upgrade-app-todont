@@ -34,7 +34,6 @@
           <template #option="scope">
             <q-item
               v-bind="scope.itemProps"
-              v-on="scope.itemEvents"
             >
               <q-item-section avatar>
                 <q-icon name="flag" />
@@ -65,7 +64,7 @@
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
-      content-class="bg-primary"
+      class="bg-primary"
     >
       <main-menu-list />
     </q-drawer>

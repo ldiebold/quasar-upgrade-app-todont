@@ -1,21 +1,21 @@
 <template>
   <q-popup-edit
+    v-slot="scope"
     v-model="updateValue"
     @save="handleUpdateTodont"
   >
     <q-input
-      v-model="updateValue"
+      v-model="scope.value"
       filled
       dense
       autofocus
+      @keyup.enter="scope.set"
     />
   </q-popup-edit>
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex'
-
-const { mapMutations } = createNamespacedHelpers('todonts')
+import { useStore } from 'vuex'
 
 import { ref } from 'vue'
 
@@ -31,26 +31,27 @@ export default {
     'update-success'
   ],
 
-  setup (props) {
+  setup (props, { emit }) {
+    const store = useStore()
+
+    const updateTodont = payload => store.commit('todonts/UPDATE_TODONT', payload)
+
     const updateValue = ref(props.todont.title)
 
-    function handleUpdateTodont () {
-      this.updateTodont({
-        uid: this.todont.uid,
+    function handleUpdateTodont (title) {
+      updateTodont({
+        uid: props.todont.uid,
         data: {
-          title: updateValue.value
+          title
         }
       })
-      this.$emit('update-success', updateValue.value)
+      emit('update-success', updateValue.value)
     }
 
     return {
       dialogShowing: false,
       handleUpdateTodont,
-      updateValue,
-      ...mapMutations({
-        updateTodont: 'UPDATE_TODONT'
-      })
+      updateValue
     }
   }
 

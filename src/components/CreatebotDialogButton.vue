@@ -21,10 +21,10 @@
           class="scroll"
         >
           <q-chat-message
-            label-sanitize
             :label="`${now.getDate()}/${now.getMonth()}/${now.getFullYear()}`"
           />
           <q-chat-message
+            text-html
             :text="[
               '<strong>Try these commands: </strong>',
               '- create todont: Tell Shannen I love her',
@@ -57,6 +57,7 @@
             @keypress.enter="handleSendClicked"
           />
           <q-btn
+            id="sendButton"
             color="primary"
             icon="send"
             @click="handleSendClicked"

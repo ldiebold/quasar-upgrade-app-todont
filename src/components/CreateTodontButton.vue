@@ -5,7 +5,7 @@
   >
     <q-dialog
       v-model="dialogShowing"
-      content-class="bg-blue-1"
+      class="bg-blue-1"
     >
       <q-card class="bg-white">
         <q-card-section>

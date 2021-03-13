@@ -27,6 +27,7 @@ module.exports = {
     'plugin:vue/vue3-recommended', // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
 
     'standard'
+    // 'plugin:quasar/standard'
 
   ],
 
@@ -34,6 +35,7 @@ module.exports = {
     // https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-file
     // required to lint *.vue files
     'vue'
+    // 'quasar'
 
   ],
 
@@ -53,6 +55,10 @@ module.exports = {
     // allow paren-less arrow functions
     'arrow-parens': 'off',
     'one-var': 'off',
+
+    // linting for quasar
+    // 'quasar/no-invalid-props': 'error',
+    // 'quasar/no-invalid-qfield-usage': 'error',
 
     'import/first': 'off',
     'import/named': 'error',

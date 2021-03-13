@@ -8,7 +8,6 @@
     <template #option="scope">
       <q-item
         v-bind="scope.itemProps"
-        v-on="scope.itemEvents"
       >
         <q-item-section avatar>
           <q-icon
